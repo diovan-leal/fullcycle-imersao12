@@ -1,0 +1,12 @@
+-- docker exec -it simulator bash
+go run main.go
+----------
+cd fullcycle-imersao12/simulator-aluno/.docker/kafka
+docker exec -it kafka_kafka_1 bash
+
+// {"clienteId": "1", "routeId": "1"}
+//{"clienteId": "2", "routeId": "2"}
+//{"clienteId": "3", "routeId": "3"}
+kafka-console-consumer --bootstrap-server=localhost:9092 --topic=route.new-position  <-- para consumer
+kafka-console-consumer --bootstrap-server=localhost:9092 --topic=route.new-position --group=terminal
+kafka-console-producer --bootstrap-server=localhost:9092 --topic=route.new-direction <-- para producer
