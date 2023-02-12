@@ -1,3 +1,5 @@
+---------------simulator--------------------
+
 -- docker exec -it simulator bash
 go run main.go
 ----------
@@ -10,3 +12,12 @@ docker exec -it kafka_kafka_1 bash
 kafka-console-consumer --bootstrap-server=localhost:9092 --topic=route.new-position  <-- para consumer
 kafka-console-consumer --bootstrap-server=localhost:9092 --topic=route.new-position --group=terminal
 kafka-console-producer --bootstrap-server=localhost:9092 --topic=route.new-direction <-- para producer
+
+
+-------------------nest-pai----------------------------------------------------
+npx @nestjs/cli new nest-api
+use yarn or npm choosed npm
+npm install mongoose @nestjs/mogoose --save
+
+anotações
+tudo que é desenvolvido na pasta src vai para a dist de forma compilado
